@@ -3,6 +3,11 @@ EmulationStation
 
 This is a fork of EmulationStation for RetroPie.
 EmulationStation is a cross-platform graphical front-end for emulators with controller navigation.
+This fork is a quick and dirty hack that replaces the "random video" screensaver functionality.
+
+In the parent repository, the "random video" screensaver option will choose a video at random that is associated with a game node. However, it is sometimes more desirable to use a separate set of videos for a screensaver, rather than reusing game demo footage. This fork modifies the "random video" option to pull from the same custom image directory that the slideshow option uses.
+
+As stated above, this is a quick and dirty hack. After building, you will need to add the extension of your video files to the image extension filter found under the slideshow settings. I would also reccomend removing the photo extensions, since this hack assumes all valid files can be opened with vlc. Simply set the screensaver mode to "random video," and add the desired videos to the `~/.emulationstation/slideshow/image/` directory.
 
 Building
 ========
