@@ -75,13 +75,15 @@ void SystemScreenSaver::startScreenSaver()
 
 		// Load a random video
 		std::string path = "";
-		pickRandomVideo(path);
+		pickRandomCustomImage(path);
+		mCurrentGame = NULL;
 
 		int retry = 200;
-		while(retry > 0 && ((path.empty() || !Utils::FileSystem::exists(path)) || mCurrentGame == NULL))
+		while(retry > 0 && ((path.empty() || !Utils::FileSystem::exists(path))))
 		{
 			retry--;
-			pickRandomVideo(path);
+			pickRandomCustomImage(path);
+			mCurrentGame = NULL;
 		}
 
 		if (!path.empty() && Utils::FileSystem::exists(path))
